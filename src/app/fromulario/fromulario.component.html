@@ -1,2 +1,33 @@
-<p>fromulario works!</p>
-<button class="btn btn-success" [routerLink]="['/blog']">Enviar</button>
+<div class="ml-3">
+    <div class="form-group">
+        <label>Titulo</label>
+        <input type="email" class="form-control col-6" [(ngModel)]="post.titulo">
+    </div>
+    <div class="form-group">
+        <label>Texto</label>
+        <input type="email" class="form-control col-6" [(ngModel)]="post.texto">
+    </div>
+    <div class="form-group">
+        <label>Autor</label>
+        <input type="email" class="form-control col-6" [(ngModel)]="post.autor">
+    </div>
+    <div class="form-group">
+        <label>Imagen</label>
+        <input type="email" class="form-control col-6" [(ngModel)]="post.imagen">
+    </div>
+    <div class="form-group">
+        <label>Fecha</label>
+        <input type="date" class="form-control col-6" [(ngModel)]="post.fecha">
+    </div>
+    <div class="form-group">
+        <label>Elige categoría: </label>
+        <select class="form-control form-control-sm col-6" [(ngModel)]="post.categoria">
+            <option value="tecnologia">Tecnología</option>
+            <option value="libros">Libros</option>
+            <option value="deporte">Deporte</option>
+            <option value="moda">Moda</option>
+        </select>
+    </div>
+    <button class="btn btn-success" [routerLink]="['/blog']" (click)="onAgregacion(post)">Enviar</button>
+</div>
+<!-- {{post|json}} -->

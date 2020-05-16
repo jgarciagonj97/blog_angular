@@ -8,14 +8,18 @@ export class AgregarService {
 
   arrPost: Post[];
 
-  constructor() { }
-
-  agregarPost() {
-
+  constructor() {
+    this.arrPost = [];
   }
 
-  getAllPosts() {
+  agregarPost(pPost: Post) {
+    this.arrPost.push(pPost);
+  }
 
+  getAllPosts(): Promise<Post[]> {
+    return new Promise((resolve, reject) => {
+      resolve(this.arrPost);
+    });
   }
 
   getPostsByCategoria() {

@@ -1,2 +1,15 @@
-<p>blog works!</p>
-<button class="btn btn-primary" [routerLink]="['/form']">Volver</button>
+<!-- {{arrPostHechos|json}} -->
+<div class="container text-center">
+    <h1>Posts</h1>
+    <div class="row">
+        <div class="col-4" *ngFor="let arr of arrPostHechos">
+            <div class="d-flex flex-column mt-3 tarjetita">
+                <p>{{arr.titulo}}, {{arr.autor}}, {{arr.fecha}}</p>
+                <p class="font-weight-bold">{{arr.texto}}</p>
+                <img [src]="arr.imagen">
+                <p>{{arr.categoria}}</p>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary mt-4" [routerLink]="['/form']">Volver</button>
+</div>

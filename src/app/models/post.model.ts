@@ -7,8 +7,8 @@ export class Post {
     fecha: string;
     categoria: string;
 
-    constructor(PTitulo = '', pTexto = '', pAutor = '', pImagen = '', pFecha = '', pCategoria = '') {
-        this.titulo = PTitulo;
+    constructor(pTitulo = '', pTexto = '', pAutor = '', pImagen = '', pFecha = '', pCategoria = '') {
+        this.titulo = pTitulo;
         this.texto = pTexto;
         this.autor = pAutor;
         this.imagen = pImagen;
