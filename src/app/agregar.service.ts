@@ -13,7 +13,11 @@ export class AgregarService {
   }
 
   agregarPost(pPost: Post) {
-    this.arrPost.push(pPost);
+    if (pPost.categoria === '') {
+      alert('Rellena campo categoría');
+    } else {
+      this.arrPost.push(pPost);
+    }
   }
 
   getAllPosts(): Promise<Post[]> {
@@ -22,7 +26,19 @@ export class AgregarService {
     });
   }
 
-  getPostsByCategoria() {
-
+  getPostsByCategoria(pCat): Promise<Post[]> {
+    return new Promise((resolve, reject) => {
+      let arrFiltrado: Post[] = [];
+      for (let noticia of this.arrPost) {
+        if (pCat === '') {
+          arrFiltrado = this.arrPost;
+        }
+        else if (noticia.categoria === pCat) {
+          arrFiltrado.push(noticia);
+        }
+      }
+      resolve(arrFiltrado);
+    });
   }
+
 }

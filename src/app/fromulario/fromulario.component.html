@@ -28,6 +28,7 @@
             <option value="moda">Moda</option>
         </select>
     </div>
-    <button class="btn btn-success" [routerLink]="['/blog']" (click)="onAgregacion(post)">Enviar</button>
+    <button class="btn btn-success" (click)="onAgregacion(post)">Enviar</button>
+    <button class="btn btn-link ml-2" [routerLink]="['/blog']">Ir a Posts</button>
 </div>
 <!-- {{post|json}} -->

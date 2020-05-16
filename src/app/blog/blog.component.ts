@@ -17,4 +17,8 @@ export class BlogComponent implements OnInit {
     this.arrPostHechos = await this.servicio.getAllPosts();
   }
 
+  async filtrarCat($event) {
+    this.arrPostHechos = await this.servicio.getPostsByCategoria($event.target.value);
+  }
+
 }

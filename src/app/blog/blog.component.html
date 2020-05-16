@@ -1,6 +1,13 @@
 <!-- {{arrPostHechos|json}} -->
 <div class="container text-center">
     <h1>Posts</h1>
+    <select (change)="filtrarCat($event)">
+        <option value="">Selecciona una categoría</option>
+        <option value="tecnologia">Tecnología</option>
+        <option value="libros">Libros</option>
+        <option value="deporte">Deporte</option>
+        <option value="moda">Moda</option>
+    </select>
     <div class="row">
         <div class="col-4" *ngFor="let arr of arrPostHechos">
             <div class="d-flex flex-column mt-3 tarjetita">

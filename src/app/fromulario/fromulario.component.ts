@@ -10,11 +10,9 @@ import { Post } from '../models/post.model';
 export class FromularioComponent implements OnInit {
 
   post: Post;
-  posts: Post[];
 
   constructor(private servicio: AgregarService) {
     this.post = new Post();
-    this.posts = [];
   }
 
   ngOnInit(): void {
@@ -22,6 +20,7 @@ export class FromularioComponent implements OnInit {
 
   onAgregacion(pPost: Post) {
     this.servicio.agregarPost(pPost);
+    this.post = new Post();
   }
 
 }
