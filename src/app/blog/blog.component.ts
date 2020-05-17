@@ -21,4 +21,10 @@ export class BlogComponent implements OnInit {
     this.arrPostHechos = await this.servicio.getPostsByCategoria($event.target.value);
   }
 
+  onBorrar(pPost: Post) {
+    if (confirm('¿Seguro que quieres borrarlo?')) {
+      this.servicio.borrarBlog(pPost);
+    }
+  }
+
 }
